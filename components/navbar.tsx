@@ -1,7 +1,6 @@
 "use client";
 import { Navbar, NavbarContent, NavbarBrand, NavbarItem } from "@heroui/navbar";
 import { usePathname } from "next/navigation";
-
 import { Link } from "@heroui/link";
 import { useEffect, useState } from "react";
 
@@ -24,7 +23,6 @@ export default function HeroUINavbar() {
 
   useEffect(() => {
     setActiveLink(pathname);
-    console.log(pathname);
   }, [pathname]);
 
   return (

@@ -1,5 +1,5 @@
 "use client";
-import { Children, createContext, ReactNode, useState, useEffect } from "react";
+import { createContext, ReactNode, useState, useEffect } from "react";
 
 interface animalProps {
   id: number;
@@ -15,6 +15,7 @@ export const animalContext = createContext<{
 
 export default function AnimalProvider({ children }: { children: ReactNode }) {
   const [animals, setAnimals] = useState<animalProps[]>([]);
+
   function likesRandom() {
     return Math.floor(Math.random() * 100);
   }

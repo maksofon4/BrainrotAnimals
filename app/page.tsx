@@ -8,8 +8,8 @@ import {
   TableCell,
 } from "@heroui/react";
 import { useContext } from "react";
-import { animalContext } from "@/components/animalProvider";
 
+import { animalContext } from "@/components/animalProvider";
 import ModalWin from "@/components/modal";
 
 interface animalProps {
@@ -41,8 +41,8 @@ export default function Home() {
             <TableCell>{animal.likes}</TableCell>
             <TableCell>
               <ModalWin
-                animals={animals}
                 animal={animal}
+                animals={animals}
                 onChanges={handleAnimalsChange}
               />
             </TableCell>

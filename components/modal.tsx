@@ -40,7 +40,7 @@ export default function ModalWin({
             image: image ?? a.image,
             likes: a.likes,
           }
-        : a
+        : a,
     );
 
     onChanges(updatedAnimals);
@@ -64,17 +64,20 @@ export default function ModalWin({
       updateAnimal(animal);
       setImage(null);
       setMemeName(null);
+
       return true;
     }
   }
 
   function isValidImageUrl(url: string) {
     const pattern = /^https?:\/\/.+\.(jpg|jpeg)$/i;
+
     return pattern.test(url);
   }
 
   function isValidAnimalName(name: string): boolean {
     const trimmed = name.trim();
+
     return trimmed.length >= 3 && trimmed.length <= 100;
   }
 
@@ -90,9 +93,9 @@ export default function ModalWin({
               </ModalHeader>
               <ModalBody>
                 <Input
-                  label="name"
                   errorMessage="Please enter a valid name"
                   isInvalid={isNameInvalid}
+                  label="name"
                   value={memeName !== null ? memeName : animal.name}
                   onChange={(e) => {
                     setMemeName(e.target.value);
