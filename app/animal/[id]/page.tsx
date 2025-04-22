@@ -1,14 +1,15 @@
 "use client";
-import React, { useContext, use } from "react";
+import React, { useContext } from "react";
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
+import { useParams } from "next/navigation";
 
 import { animalContext } from "@/components/animalProvider";
 
-export default function Animal({ params }: { params: { id: string } }) {
+export default function Animal() {
   const { animals } = useContext(animalContext)!;
-  const { id } = use(params);
 
-  const animalId = parseInt(id, 10); // convert URL param to number
+  const params = useParams();
+  const animalId = parseInt(params.id as string, 10);
   const animal = animals.find((a) => a.id === animalId); // find animal by id
 
   if (!animal) return <h1>Animal not found</h1>;
