@@ -48,7 +48,7 @@ export default function HeroUINavbar() {
         <AcmeLogo />
         <p className="font-bold text-inherit">MEMES</p>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className=" sm:flex gap-4" justify="center">
         <NavbarItem isActive={activeLink === "/"}>
           <Link
             href="/"
